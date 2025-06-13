@@ -11,7 +11,7 @@ A lightweight REST API built with **Node.js**, **Express**, and **MongoDB** to i
 
 | Endpoint                                                  | Method | Description                            |
 | --------------------------------------------------------- | ------ | -------------------------------------- |
-| [`/api/enroll`](https://your-app.onrender.com/api/enroll) | `POST` | Enroll a user action and award credits |
+| [`/api/enroll`](https://credit-engine-hwvt.onrender.com/api/enroll) | `POST` | Enroll a user action and award credits |
 | `/api/credits/:userId`                                    | `GET`  | Get total credits for a specific user  |
 
 Replace `https://your-app.onrender.com` with your actual Render URL.
