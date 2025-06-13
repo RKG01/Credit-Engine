@@ -1,8 +1,4 @@
-Absolutely Rahul! Here's your **final polished `README.md`**, ready to copy-paste or push to your GitHub repo. This version is fully production-ready and tailored to impress Alatree Ventures:
 
----
-
-````md
 # 📘 credit-engine – Backend API for Issuing and Tracking Credits
 
 A lightweight REST API built with **Node.js**, **Express**, and **MongoDB** to issue and track “thank-you” credits based on ecosystem interactions such as referrals, tech usage, posts, and more.
@@ -159,3 +155,19 @@ npm install
 npm start
 ```
 
+---
+
+## 📜 License
+
+This project was developed for educational and evaluation purposes as part of a technical assessment.
+
+---
+
+### ✅ Built with ❤️ by Rahul Gupta
+
+```
+
+---
+
+Let me know if you want this pushed to your GitHub or need a final **submission email** to send. You're all set, and this is absolutely professional! 🚀
+```
