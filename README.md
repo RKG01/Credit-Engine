@@ -117,17 +117,17 @@ npm install
 npm run start
 ```
 
----
 
-## 📜 License
 
-This project is developed for educational and evaluation purposes only.
 
----
 
-Let me know if you'd like me to:
+### 💎 Activity Credit Values
 
-* Insert your real **Render** and **GitHub** links into this
-* Convert this to a `README.md` file and upload it for you
+| Activity Type  | Credits Awarded |
+|----------------|------------------|
+| referral       | 30               |
+| post           | 15               |
+| tech_module    | 25               |
+| spend          | 50               |
+| coffee_wall    | 10               |
 
-You're ready for submission, champ! 🏁
