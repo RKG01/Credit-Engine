@@ -1,27 +1,47 @@
 const Credit = require('../models/credit');
 
+const activityCredits = {
+  referral: 30,
+  post: 15,
+  tech_module: 25,
+  spend: 50,
+  coffee_wall: 10,
+};
+
 exports.handleEnroll = async (req, res) => {
-    const { userId, activityType } = req.body;
+  const { userId, activityType } = req.body;
 
-    if (!userId || !activityType) {
-        return res.status(400).json({ error: 'userId and activityType required' });
+  if (!userId || !activityType) {
+    return res.status(400).json({ error: 'userId and activityType are required' });
+  }
+
+  const creditValue = activityCredits[activityType];
+
+  if (!creditValue) {
+    return res.status(400).json({ error: 'Invalid activityType provided' });
+  }
+
+  try {
+    let user = await Credit.findOne({ userId });
+
+    if (!user) {
+      user = new Credit({
+        userId,
+        totalCredits: creditValue,
+      });
+    } else {
+      user.totalCredits += creditValue;
     }
 
-    const creditValue = 20; // can make dynamic based on activityType
+    await user.save();
 
-    try {
-        let user = await Credit.findOne({ userId });
-        if (!user) {
-            user = new Credit({ userId, totalCredits: creditValue });
-        } else {
-            user.totalCredits += creditValue;
-        }
-
-        await user.save();
-
-        res.json({ creditsAwarded: creditValue, totalCredits: user.totalCredits });
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({ error: 'Server error' });
-    }
+    return res.status(200).json({
+      message: 'Credits awarded successfully',
+      creditsAwarded: creditValue,
+      totalCredits: user.totalCredits,
+    });
+  } catch (err) {
+    console.error('Error in handleEnroll:', err);
+    return res.status(500).json({ error: 'Server error' });
+  }
 };
